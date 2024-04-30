@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subnet Surfer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="build/main.min.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="./images/SubnetSurferLogo.svg"
+        alt="SubnetSurferLogo"
+        class="logo"
+      />
+      <h1 data-value="Subnet Surfer" id="titleSurfer">Subnet Surfer</h1>
+    </header>
+
+    <div class="container">
+      <section class="stack">
+        <section>
+          <div class="row justify-space">
+            <div>
+              <h5>Ip address</h5>
+              <input
+                type="text"
+                id="ipAddress"
+                value="000.000.000.000"
+                class="bold"
+              />
+              <div class="row">
+                <p id="binaryAddressTriggered" class="coloured binary">0</p>
+                <p id="binaryAddressOriginal" class="binary">
+                  0000000.00000000.00000000.00000000
+                </p>
+              </div>
+            </div>
+            <button id="refreshButton" class="icon-button">
+              <box-icon color="white" name="refresh"></box-icon>
+            </button>
+          </div>
+          <div class="divider"></div>
+        </section>
+
+        <section>
+          <h5>Subnet mask</h5>
+          <input
+            type="text"
+            id="subnetMask"
+            value="000.000.000.000"
+            class="bold"
+          />
+
+          <div class="row">
+            <p id="binarySubnetValueTriggered" class="coloured binary">0</p>
+            <p id="binarySubnetValueOrignal" class="binary">
+              0000000.00000000.00000000.00000000
+            </p>
+          </div>
+          <div class="divider"></div>
+        </section>
+
+        <section>
+          <h5 data-value="Network address" id="decoded">Network address</h5>
+          <div class="row">
+            <p id="maskedIpAddress" class="bold">0.0.0.0</p>
+            <input type="number" id="numericMaskValue" value="0" class="bold" />
+          </div>
+          <div class="row">
+            <p id="binaryMaskedAddressTriggered" class="coloured binary">0</p>
+            <p id="binaryMaskedAddressOriginal" class="binary">
+              0000000.00000000.00000000.00000000
+            </p>
+          </div>
+          <div class="divider"></div>
+        </section>
+      </section>
+
+      <section class="row justify-space">
+        <div class="row-elements">
+          <div class="row">
+            <box-icon name="network-chart" color="gray"></box-icon>
+            <h5>Nb Addresses</h5>
+          </div>
+          <p id="addressesValue">0</p>
+        </div>
+        <div class="row-elements">
+          <div class="row">
+            <box-icon name="buildings" color="gray"></box-icon>
+            <h5>Nb Hosts</h5>
+          </div>
+          <p id="hostsValue">0</p>
+        </div>
+      </section>
+      <div class="divider"></div>
+
+      <section class="rangeContainer">
+        <h5>Mask range</h5>
+        <input type="range" id="slider" min="0" max="32" step="1" value="0" />
+        <span id="colSpan"></span>
+      </section>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="build/surferCore.min.js"></script>
+    <script src="build/subnetCalculator.min.js"></script>
+    <script src="build/visualEffects.min.js"></script>
+  </body>
+</html>

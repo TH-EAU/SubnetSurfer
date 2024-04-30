@@ -32,6 +32,7 @@ const hostsValue = document.getElementById("hostsValue");
 
 const display = () => {
   // decodeEffect(decodedText, decodedText.dataset.value);
+  // console.log(sliceBinaryIpAddressString(Ip.address, sliderValue));
   colSpan.style.width = `${slider.value * 0.47}rem`;
   ipInput.value = Ip.address.join(".");
   subnetInput.value = Ip.mask.join(".");

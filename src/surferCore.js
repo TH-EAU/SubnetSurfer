@@ -17,11 +17,12 @@ function ValidateIPaddress(ipaddress, message = "bad entry") {
 }
 
 const sliceBinaryIpAddressString = (address, slicer) => {
-  let i = (j = part = 0);
+  let i = -1;
+  let j = (part = 0);
   let slicedStr = ["", ""];
   while (i < address.length) {
     if (address[i] != ".") j++;
-    slicedStr[part] += address[i];
+    if (address[i]) slicedStr[part] += address[i];
     if (j > slicer) part = 1;
     i++;
   }
